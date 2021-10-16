@@ -1,0 +1,251 @@
+:root{
+    --darkGray: #212329;
+    --brightred: #ff5722;
+    --white: #fff;
+    --lightred: #79504bed;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*::before,
+*::after
+{
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--darkGray);
+    background-image: linear-gradient(to bottom, #41414196, rgba(0, 0, 0, 0.945)),
+    url(../img/hero.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+@media screen and (max-width: 968px) {
+    .container{
+        height: unset;
+    
+    }
+}
+.nav-container{
+    width: 100%;
+    background: transparent;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.navbar__logo{
+    color: var(--white);
+    font-weight: 500;
+    font-family: cursive;
+    font-size: 2.4rem;
+    
+}
+.navbar__logo span{
+  color: var(--brightred);
+}
+.nav-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 3rem;
+    list-style-type: none;
+}
+
+.nav-menu .nav-link{
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+.nav-menu .nav-link:hover{
+   color: var(--brightred);
+   transition: all 0.25s ease-in-out;
+   opacity: 1;
+}
+.nav-link.btn{
+    background: var(--brightred);
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border:1px   solid var(--brightred);
+}
+
+.nav-link.btn:hover{
+    background: transparent;
+    padding: 0.8rem 2rem;
+    color: var(--white);
+    transition: all 0.25se ease-in-out;
+}
+
+.menu-toggle .bar{
+    width: 35px;
+    height: 3px;
+    background: var(--white);
+    margin: 5px 0;
+  
+    cursor: pointer;
+}
+
+@media screen and (max-width: 968px) {
+   
+
+    .nav-container{
+        position: relative;
+    }
+
+    .nav-menu{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: -100%;/*To hide*/
+        opacity: 0;
+        width: 100%;
+        background: var(--darkGray);
+        transition: all 0.25s ease;
+        padding: 2rem 0;
+    
+    }
+    /** Adding class from js to show the nav meun**/
+    .nav-menu.active{
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+    }
+
+    .nav-link{
+        line-height: 3;
+        width: 100%;
+    }
+    .menu-toggle  span{
+        display: block;
+     
+    }
+    .menu-toggle.open  span{
+        transform-origin: 8px 2px;
+         width: 25px;
+      }
+      
+    .menu-toggle.open  span:nth-child(1){
+      display: none;
+    }
+    .menu-toggle.open  span:nth-child(2){
+      transform: rotate(50deg);
+    }
+    .menu-toggle.open  span:nth-child(3){
+        transform: rotate(-50deg);
+    }
+    
+}
+
+.hero{
+    width: 90%;
+    margin: 0 auto;
+    flex: 0 0 50%;
+    margin: 0 auto;
+}
+
+.hero__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+ 
+}
+.hero h1{
+    font-size: 3rem;
+    color: var(--white);
+    line-height: 2rem;
+    margin-bottom: 2rem;
+}
+h2{
+    color: #fff;
+    opacity: 0.8;
+}
+
+.card{
+
+    width: 30%;
+    width: 20rem;
+    background:rgba(49, 49, 49, 0.452);
+    padding: 1rem;
+    text-align: center;
+}
+
+
+.card:nth-child(3){
+    transform: scale(1.1);
+}
+.card__body span{
+    display: block;
+    line-height: 4rem;
+    font-size: 1.3rem;
+    color: var(--white);
+}
+
+.card__body span:not(:last-child){
+    border-bottom: 1px solid rgb(110, 110, 110);
+    
+}
+.card__body span:last-child{
+    margin-top: 2rem;
+}
+.card__body a{
+    text-decoration: none;
+    color: var(--white);
+  
+}
+
+
+@media screen and (max-width: 968px) {
+    
+  .hero  h1{
+        font-size: 2rem;
+    }
+  .hero  h2{
+        font-size: 1rem;
+    }
+
+    .card__body span{
+       font-size: 1rem;
+    }
+}
+
+.hero__footer{
+
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.hero__footer img{
+    width: 20rem;
+    height: 20rem;
+}
+
+.hero__footer .nav-link.btn{
+  background-color: transparent;
+}
+.hero__footer .nav-link.btn:hover{
+  background-color: var(--brightred);
+  transition: all 0.24s ease-in-out;
+}
+
